@@ -53,7 +53,11 @@ use the plugin.
 # for your system. Proceed only on a throwaway host.
 
 # install the plugin shared library
+# OSX
 install -o root -g root -m 0644 ./target/release/libsudopair.dylib /usr/libexec/sudo
+
+# Linux (ubuntu)
+install -o root -g root -m 0644 ./target/release/libsudo_pair.so /usr/lib/sudo/sudo_pair.so
 
 # create a socket directory
 install -o root -g root -m 0644 -d /var/run/sudo_pair
@@ -69,8 +73,8 @@ install -o root -g root -m 0644 ./sample/etc/sudo.conf /etc/sudo.conf
 
 # if these prompts don't work for you, they're configurable via a simple
 # templating language explained later in the README
-install -o root -g root -m 0644 ./sample/etc/sudo.prompt.user /etc/sudo.prompt.user
-install -o root -g root -m 0644 ./sample/etc/sudo.prompt.pair /etc/sudo.prompt.pair
+install -o root -g root -m 0644 ./sample/etc/sudo_pair.prompt.user /etc/sudo_pair.prompt.user
+install -o root -g root -m 0644 ./sample/etc/sudo_pair.prompt.pair /etc/sudo_pair.prompt.pair
 ```
 
 This only places the plugin files into their expected locations. The plugin

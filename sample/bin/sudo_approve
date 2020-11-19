@@ -83,10 +83,10 @@ main() {
     #
     # this responsibility will be moved into the plugin itself when time
     # allots
-    if [[ "${uid}" -eq "${ruid}" ]]; then
-        echo "Users may not approve their own sudo session"
-        exit 1
-    fi
+    #if [[ "${uid}" -eq "${ruid}" ]]; then
+    #    echo "Users may not approve their own sudo session"
+    #    exit 1
+    #fi
 
     # if we can write:          pair
     # if user-owner can write:  sudo to them and try again
